@@ -26,8 +26,19 @@ namespace aemtest.Services
 
         public async Task<bool> SyncPlatformAndWell()
         {
-            var isSync = false;
             var platforms = await _restClient.GetPlatformWellActual();
+            return await SyncData(platforms);
+        }
+
+        public async Task<bool> SyncDummyPlatformAndWell()
+        {
+            var platforms = await _restClient.GetPlatformWellDummy();
+            return await SyncData(platforms);
+        }
+
+        private async Task<bool> SyncData(IEnumerable<Platform> platforms)
+        {
+            var isSync = false;
 
             if (platforms.Any())
             {

@@ -9,5 +9,6 @@ namespace aemtest.Services
     public interface ISyncService : IScopedService
     {
         Task<bool> SyncPlatformAndWell();
+        Task<bool> SyncDummyPlatformAndWell();
     }
 }

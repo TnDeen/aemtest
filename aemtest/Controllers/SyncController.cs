@@ -30,6 +30,13 @@ namespace aemtest.Controllers
             return await _syncService.SyncPlatformAndWell();
         }
 
+        [HttpPost]
+        [Route("[action]")]
+        public async Task<ActionResult<bool>> SyncDummyPlatformAndWell()
+        {
+            return await _syncService.SyncDummyPlatformAndWell();
+        }
+
         [HttpGet]
         [Route("[action]")]
         public async Task<IEnumerable<dynamic>> LastUpdatedWell()

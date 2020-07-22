@@ -12,6 +12,7 @@ using AutoMapper;
 
 namespace aemtest.Controllers
 {
+    [ApiExplorerSettings(IgnoreApi = true)]
     [Route("api/[controller]")]
     [ApiController]
     public class WellsController : ControllerBase
